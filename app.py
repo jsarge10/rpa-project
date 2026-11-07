@@ -109,11 +109,14 @@ def create_invoice(invoice_num, order_data,directory):
 
 create_invoice(8515, order_data, directory)
 # Question 5
+gmail_password_path = select_file('Please select the gmail password file')
+
+gmail_password = open(gmail_password_path).read()
 # INSERT ANSWER FOR QUESTION 5 HERE
 def send_email(invoice_num, name, email, date, directory):
     subject = f'Your Order from PythonTech Co. - Invoice {invoice_num}'
     gmail_user = 'jacksargent110@gmail.com'
-    gmail_password = open('/Users/jacksargent/Documents/Advanced Analytics/17 - Project 3 - Robotic Process Automation/gmail_password.txt').read()
+    
     body = f"""Dear {name},
 
     Attached is your invoice dated {date}.
